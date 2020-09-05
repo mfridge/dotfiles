@@ -21,9 +21,8 @@ alias ls='ls -N --color'
 alias diff='diff --color'
 alias r='ranger'
 
-#export TERM=linux
-
-alias dotfiles='/usr/bin/git --git-dir=/home/michael/.dotfiles.git/ --work-tree=/home/michael'
+# Enable vim keybindings in bash
+set -o vi
 
 # pip installs binaries to ~/.local/bin
 PATH=$PATH:~/.local/bin
