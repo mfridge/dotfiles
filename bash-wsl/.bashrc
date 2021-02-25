@@ -32,3 +32,7 @@ PATH=$PATH:"/mnt/c/Program Files (x86)/Intel/iCLS Client/:/mnt/c/Program Files/I
 # Set DISPLAY for X410 Windows X-Server
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 
+# Show git branch in $PS1
+source ~/.git-prompt.sh
+export PS1="${PS1:0:${#PS1}-1}\[\033[0;31m\]\$(__git_ps1)\[\033[0m\] "
+
