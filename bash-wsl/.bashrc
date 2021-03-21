@@ -26,8 +26,7 @@ set -o vi
 
 # pip installs binaries to ~/.local/bin
 PATH=$PATH:~/.local/bin
-# Windows path to execute Windows programs (manuell aus PengWin kopiert, da ich die Windows PATH-Variable nicht automatisch hier reinbekommen habe)
-PATH=$PATH:"/mnt/c/Program Files (x86)/Intel/iCLS Client/:/mnt/c/Program Files/Intel/iCLS Client/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/Michael/AppData/Local/Microsoft/WindowsApps"
+# Windows PATH should be added to /etc/profile.d. Copy it from another WSL distribution, where the PATH is set through WSL. I don't know why this does not work with Gentoo.
 
 # Set DISPLAY for X410 Windows X-Server
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
