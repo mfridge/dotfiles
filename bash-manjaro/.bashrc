@@ -1,7 +1,3 @@
-# Show git branch in $PS1
-source ~/.git-prompt.sh
-export PS1="${PS1:0:${#PS1}-1}\[\033[0;31m\]\$(__git_ps1)\[\033[0m\] "
-
 # pip installs binaries to ~/.local/bin
 PATH=$PATH:~/.local/bin
 
