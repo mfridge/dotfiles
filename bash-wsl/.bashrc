@@ -20,9 +20,6 @@ alias ls='ls -N --color'
 alias diff='diff --color'
 alias r='ranger'
 
-# Enable vim keybindings in bash
-set -o vi
-
 # Allow "pip install" only in virtual environments. Use "gpip" to install packages globally (below
 # configured alias)
 export PIP_REQURE_VIRTUALENV=true
@@ -32,10 +29,6 @@ gpip() {
 
 # pip installs binaries to ~/.local/bin
 PATH=$PATH:~/.local/bin
-
-# Show git branch in $PS1
-source ~/.git-prompt.sh
-export PS1="${PS1:0:${#PS1}-1}\[\033[0;31m\]\$(__git_ps1)\[\033[0m\] "
 
 # WSL bug with authentication agent
 # See https://stackoverflow.com/a/50942800
