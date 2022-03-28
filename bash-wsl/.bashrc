@@ -22,7 +22,7 @@ alias r='ranger'
 
 # Allow "pip install" only in virtual environments. Use "gpip" to install packages globally (below
 # configured alias)
-export PIP_REQURE_VIRTUALENV=true
+export PIP_REQUIRE_VIRTUALENV=true
 gpip() {
     PIP_REQUIRE_VIRTUALENV=false pip "$@"
 }
