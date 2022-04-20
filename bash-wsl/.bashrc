@@ -14,24 +14,23 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-
-# Put your fun stuff here.
+# Set alias
 alias mount='mount | column -t'
 alias ls='ls -N --color'
 alias diff='diff --color'
 alias r='ranger'
 
-# Enable vim keybindings in bash
-set -o vi
+# Allow "pip install" only in virtual environments. Use "gpip" to install packages globally (below
+# configured alias)
+export PIP_REQUIRE_VIRTUALENV=true
+gpip() {
+    PIP_REQUIRE_VIRTUALENV=false pip "$@"
+}
 
 # pip installs binaries to ~/.local/bin
 PATH=$PATH:~/.local/bin
-# Windows PATH should be added to /etc/profile.d. Copy it from another WSL distribution, where the PATH is set through WSL. I don't know why this does not work with Gentoo.
 
-# Set DISPLAY for X410 Windows X-Server
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
-
-# Show git branch in $PS1
-source ~/.git-prompt.sh
-export PS1="${PS1:0:${#PS1}-1}\[\033[0;31m\]\$(__git_ps1)\[\033[0m\] "
-
+# WSL bug with authentication agent
+# See https://stackoverflow.com/a/50942800
+eval "$(ssh-agent -s)" &> /dev/null
+ssh-add ~/.ssh/id_rsa &> /dev/null
