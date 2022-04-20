@@ -1,0 +1,1 @@
+../bash-manjaro/.git-prompt.sh
