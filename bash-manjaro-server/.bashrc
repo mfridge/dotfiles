@@ -11,5 +11,4 @@ gpip() {
 # Alias
 alias ls='ls --color=auto -N'
 alias grep='grep --color=auto'
-alias mount='mount | column -t'
 
