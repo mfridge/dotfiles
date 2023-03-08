@@ -1,6 +1,7 @@
 {
     "terminal.integrated.shellIntegration.history": 1000,
     // Launch shell (bash) with login argument to source .bash_profile
+    "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.profiles.linux": {
         "bash": {
             "path": "bash",
