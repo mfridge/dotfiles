@@ -34,3 +34,7 @@ PATH=$PATH:~/.local/bin
 # See https://stackoverflow.com/a/50942800
 eval "$(ssh-agent -s)" &> /dev/null
 ssh-add ~/.ssh/id_rsa &> /dev/null
+
+# Set BROWSER variable as we are missing xdg-open in WSL
+BROWSER="powershell.exe /C start"
+
