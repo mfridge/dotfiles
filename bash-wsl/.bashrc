@@ -14,11 +14,16 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+# Bash autocompletion
+source /etc/profile.d/bash_completion.sh
+
 # Set alias
 alias mount='mount | column -t'
 alias ls='ls -N --color'
 alias diff='diff --color'
 alias r='ranger'
+alias gl='git log --graph --decorate'
+alias gla='git log --all --graph --decorate'
 
 # Allow "pip install" only in virtual environments. Use "gpip" to install packages globally (below
 # configured alias)
