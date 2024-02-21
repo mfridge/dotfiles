@@ -1,1 +1,0 @@
-../bash-manjaro/etc-bash.bashrc

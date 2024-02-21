@@ -2,11 +2,16 @@
 # In contrast, .bashrc is sourced by "non-login shells" (i.e. initial mosh
 # connection).
 
-source .bashrc
+source ~/.bashrc
 
 # Show git branch in $PS1
 source ~/.git-prompt.sh
-export PS1="${PS1:0:${#PS1}-1}\[\033[0;31m\]\$(__git_ps1)\[\033[0m\] "
+
+green="\[\033[1;32m\]"
+blue="\[\033[1;34m\]"
+red="\[\033[1;31m\]"
+color_reset="\[\033[0m\]"
+export PS1="${PS1}${red}\$(__git_ps1)${color_reset} "
 
 # Automatically create/attach tmux session
 if [[ "$TMUX" == "" ]] && [[ "$SSH_CONNECTION" != "" ]]; then
