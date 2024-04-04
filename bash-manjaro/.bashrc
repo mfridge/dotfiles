@@ -12,6 +12,11 @@ gpip() {
     PIP_REQUIRE_VIRTUALENV=false pip "$@"
 }
 
+# Activate pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Alias
 alias ls='ls --color=auto -N'
 alias grep='grep --color=auto'
